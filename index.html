@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>M Fotografia</title>
+  <meta name="description" content="Site de fotografia minimalista com painel admin." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero" id="inicio">
+    <div class="hero-photo"><img id="heroImage" alt="Foto principal"></div>
+    <div class="hero-brand">
+      <button class="hamb" id="menuBtn" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+      <div class="brand-wrap">
+        <div class="brand-letter" id="brandInitial">M</div>
+        <div class="brand-name" id="brandName">FOTOGRAFIA</div>
+        <div class="divider"><span></span></div>
+        <div class="hero-icons">
+          <a id="whatsTop" aria-label="WhatsApp">☎</a>
+          <a id="instaTop" aria-label="Instagram">◎</a>
+          <a id="emailTop" aria-label="E-mail">✉</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="menu" id="menu">
+    <a href="#trabalhos">Trabalhos</a>
+    <a href="#ensaios">Ensaios</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#sobre">Sobre</a>
+    <a id="budgetNav">Orçamento</a>
+    <a href="admin.html">Admin</a>
+  </nav>
+
+  <main>
+    <section class="section works" id="trabalhos">
+      <h2>MEUS TRABALHOS</h2>
+      <i></i>
+      <h3 id="ensaios">ENSAIOS</h3>
+      <div class="grid three" id="ensaiosGrid"></div>
+      <h3 id="eventos">EVENTOS</h3>
+      <div class="grid three" id="eventosGrid"></div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="about-text">
+        <h2>SOBRE MIM</h2>
+        <i></i>
+        <p id="aboutText"></p>
+        <a class="btn" id="aboutBtn">SAIBA MAIS</a>
+      </div>
+      <div class="about-photo"><img id="aboutImage" alt="Sobre mim"></div>
+    </section>
+
+    <section class="section talk" id="contato">
+      <h2>VAMOS CONVERSAR?</h2>
+      <i></i>
+      <div class="contact-row">
+        <a id="whatsBottom"><span>☎</span><b>WHATSAPP</b></a>
+        <a id="instaBottom"><span>◎</span><b>INSTAGRAM</b></a>
+        <a id="emailBottom"><span>✉</span><b>E-MAIL</b></a>
+        <a id="locBottom"><span>⌖</span><b>LOCALIZAÇÃO</b></a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footerText">© 2024 M FOTOGRAFIA | TODOS OS DIREITOS RESERVADOS.</footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="close" id="closeModal">×</button>
+      <h1 id="modalTitle"></h1>
+      <p id="modalDesc"></p>
+      <div class="gallery" id="modalGallery"></div>
+      <a class="btn budget" id="modalBudget">FAZER ORÇAMENTO</a>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
