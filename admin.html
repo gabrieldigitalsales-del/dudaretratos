@@ -2,24 +2,57 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Admin | M Fotografia</title>
+  <title>Admin | Duda Retratos</title>
   <link rel="stylesheet" href="admin.css">
 </head>
 <body>
   <main id="login" class="login">
-    <div><h1>Painel Admin</h1><p>Digite a senha para editar o site.</p><input id="pass" type="password" placeholder="Senha"><button id="enter">Entrar</button><a href="index.html">Voltar ao site</a></div>
+    <div>
+      <h1>Painel Admin</h1>
+      <p>Digite a senha para editar o site.</p>
+      <input id="pass" type="password" placeholder="Senha">
+      <button id="enter">Entrar</button>
+      <a href="index.html">Voltar ao site</a>
+    </div>
   </main>
+
   <main id="panel" class="panel hidden">
-    <header><h1>Painel Admin</h1><div><a href="index.html">Ver site</a><button id="reset">Restaurar padrão</button></div></header>
-    <section><h2>Dados principais</h2><div class="form two">
-      <label>Letra da marca<input id="brandInitial"></label><label>Nome da marca<input id="brandName"></label>
-      <label>WhatsApp<input id="whatsapp"></label><label>Instagram<input id="instagram"></label>
-      <label>E-mail<input id="email"></label><label>Localização/link<input id="location"></label>
-      <label>Rodapé<input id="footer"></label><label>Texto sobre mim<textarea id="aboutText"></textarea></label>
-      <label>Foto principal<input id="heroImage" type="file" accept="image/*"></label><label>Foto sobre mim<input id="aboutImage" type="file" accept="image/*"></label>
-    </div><button id="saveMain">Salvar dados principais</button></section>
-    <section><h2>Categorias, fotos e textos</h2><div id="categories"></div><button id="addCategory">Adicionar categoria</button><button id="saveCats">Salvar categorias</button></section>
+    <header>
+      <h1>Painel Admin</h1>
+      <div><a href="index.html">Ver site</a><button id="reset">Restaurar padrão</button></div>
+    </header>
+
+    <div id="status" class="status">Carregando...</div>
+
+    <section>
+      <h2>Dados principais</h2>
+      <div class="form two">
+        <label>Letra da marca<input id="brandInitial"></label>
+        <label>Nome da marca<input id="brandName"></label>
+        <label>WhatsApp<input id="whatsapp"></label>
+        <label>Instagram<input id="instagram"></label>
+        <label>E-mail<input id="email"></label>
+        <label>Localização/link<input id="location"></label>
+        <label>Rodapé<input id="footer"></label>
+        <label>Texto sobre mim<textarea id="aboutText"></textarea></label>
+        <label>Foto principal<input id="heroImage" type="file" accept="image/*"></label>
+        <label>Foto sobre mim<input id="aboutImage" type="file" accept="image/*"></label>
+      </div>
+      <button id="saveMain">Salvar dados principais</button>
+    </section>
+
+    <section>
+      <h2>Categorias, fotos e textos</h2>
+      <div id="categories"></div>
+      <button id="addCategory">Adicionar categoria</button>
+      <button id="saveCats">Salvar categorias</button>
+    </section>
   </main>
-  <script src="data.js"></script><script src="admin.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="data.js"></script>
+  <script src="supabase-site.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>

@@ -1,11 +1,15 @@
-const KEY = "m_fotografia_site_v2";
 const $ = (s) => document.querySelector(s);
-function loadSite(){ try { return JSON.parse(localStorage.getItem(KEY)) || DEFAULT_SITE; } catch { return DEFAULT_SITE; } }
 function wa(num, msg){ return `https://wa.me/${num}?text=${encodeURIComponent(msg || "Olá! Vim pelo site e quero fazer um orçamento.")}`; }
 function imgTag(src, alt){ return `<img src="${src}" alt="${alt || ''}" loading="lazy">`; }
-let site = loadSite();
+let site = DEFAULT_SITE;
+
+async function init(){
+  site = await loadSiteData();
+  render();
+}
+
 function render(){
-  site = loadSite();
+  document.title = `${site.brandInitial || 'M'} ${site.brandName || 'FOTOGRAFIA'}`;
   $("#heroImage").src = site.heroImage;
   $("#brandInitial").textContent = site.brandInitial;
   $("#brandName").textContent = site.brandName;
@@ -35,4 +39,4 @@ function openCategory(id){
 $("#closeModal").onclick = () => $("#modal").classList.remove("open");
 $("#modal").onclick = (e) => { if(e.target.id === "modal") $("#modal").classList.remove("open"); };
 $("#menuBtn").onclick = () => $("#menu").classList.toggle("open");
-render();
+init();
