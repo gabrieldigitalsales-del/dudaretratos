@@ -4,8 +4,20 @@ function imgTag(src, alt){ return `<img src="${src}" alt="${alt || ''}" loading=
 let site = DEFAULT_SITE;
 
 async function init(){
-  site = await loadSiteData();
-  render();
+  document.body.classList.add("is-loading");
+
+  try {
+    site = await loadSiteData();
+    render();
+  } catch (error) {
+    console.error("Erro ao carregar o site:", error);
+    site = DEFAULT_SITE;
+    render();
+  } finally {
+    window.setTimeout(() => {
+      document.body.classList.remove("is-loading");
+    }, 80);
+  }
 }
 
 function render(){

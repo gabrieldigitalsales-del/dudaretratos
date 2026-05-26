@@ -66,3 +66,7 @@ dudaretratos-pre-wedding-1779123456789-a1b2c3d.jpg
 ## Observação de segurança
 
 Este projeto usa senha simples no front-end para facilitar o uso pelo celular. O SQL deixa leitura/escrita públicas para permitir edição apenas com a anon key. Para uso profissional com segurança forte, o ideal é trocar para Supabase Auth com login por e-mail e políticas RLS vinculadas ao usuário autenticado.
+
+
+## Ajuste sem piscar placeholder
+Esta versão mantém uma tela branca discreta até os dados do Supabase carregarem. Assim o visitante não vê primeiro o conteúdo placeholder/local para depois trocar pelo conteúdo do banco.
